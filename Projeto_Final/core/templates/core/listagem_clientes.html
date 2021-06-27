@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Clientes
+{% endblock %}
+
+
+
+{% block main %}
+
+     {% for cli in dados %}
+        Nome: {{ cli.nome }}<br>
+        {% if cli.endereco %}
+            Endereço: {{ cli.endereco }}<br>
+        {% else %}
+            Endereço: <br>
+        {% endif %}
+        {% if  cli.complemento  %}
+        Complemento: {{ cli.complemento }}<br>
+        {% else %}
+        Complemento: <br>
+        {% endif %}
+        {% if  cli.bairro  %}
+        Bairro: {{ cli.bairro }}<br>
+        {% else %}
+        Bairro: <br>
+        {% endif %}
+        {% if cli.cidade  %}
+        Cidade: {{ cli.cidade }}<br>
+        {% else %}
+        Cidade: <br>
+        {% endif %}
+        {% if  cli.cep  %}
+        CEP: {{ cli.cep }}<br>
+        {% else %}
+        CEP: <br>
+        {% endif %}
+        E-mail: {{ cli.email }}<br>
+        {% if cli.telefone  %}
+        Telefone: {{ cli.telefone }}<br>
+        {% else %}
+        Telefone: <br>
+        {% endif %}
+
+#        <a href="{% url 'url_atualiza_cliente' cli.id %}">Atualizar</a>  &nbsp;
+#        <a href="{% url 'url_exclui_cliente' cli.id %}">Excluir</a> <br>
+        ------------------------------------------------- <br>
+        {% endfor %}
+
+{% endblock %}

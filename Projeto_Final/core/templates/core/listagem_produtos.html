@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    CadPro
+{% endblock %}
+
+{% block subtitulo %}
+{% endblock %}
+
+{% block main %}
+     {% for pro in dados %}
+        Fabricante: {{ pro.fabricante }}<br>
+        {% if pro.modelo %}
+            Modelo: {{ pro.modelo }}<br>
+        {% else %}
+            Modelo: <br>
+        {% endif %}
+        {% if  pro.preco  %}
+        Preço: {{ pro.preco }}<br>
+        {% else %}
+        Preco:<br>
+        {% endif %}
+         {% if  pro.cor  %}
+        Cor: {{ pro.cor }}<br>
+        {% else %}
+        Cor:<br>
+        {% endif %}
+        <a href="{% url 'url_atualiza_produto' cli.id %}">Atualizar</a>  &nbsp;
+        <a href="{% url 'url_exclui_produto' cli.id %}">Excluir</a> <br>
+        ------------------------------------------------- <br>
+        {% endfor %}
+
+{% endblock %}

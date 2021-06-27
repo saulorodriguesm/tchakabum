@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="row bg-dark text-white">
+        <div class="col"><h2>TchaKabum</h2></div>
+        <div class="col-xs-12 col-md-6 text-right">
+            {% if user.get_username %}
+                ( Usuário: {{ user.get_username }}  | <a href="/admin/">admin</a> | <a href="{% url 'logout' %}">sair</a> )
+            {% else %}
+                ( <a href="{% url 'login' %}">login</a> | <a href="{% url 'url_registrar' %}">registrar</a> )
+            {% endif %}
+        </div>
+    </div>
+    <div style="background-color:#ff7d33">
+        <a class="text-dark" href="{% url 'url_principal' %}">Home</a>  &nbsp;
+        <a class="text-dark" href="{% url 'url_cadastro_produto' %}">Cadastro_Produto</a> &nbsp;&nbsp;
+        <a class="text-dark" href="{% url 'url_listagem_produtos' %}">Listagem_Produtos</a> &nbsp;&nbsp;
+        <a class="text-dark" href="{% url 'url_cadastro_cliente' %}"> Cadastro_Cliente</a> &nbsp;
+        <a class="text-dark" href="{% url 'url_listagem_clientes' %}">Listagem_Clientes</a> &nbsp;
+        <a class="text-dark" href="{% url 'url_cadastro_venda' %}">Cadastrar_Venda</a> &nbsp;
+        <a class="text-dark" href="{% url 'url_listagem_vendas' %}">Listagem_Vendas</a> &nbsp;
+    </div>
+    {% block main %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+.principal{
+
+    color : blue;
+
+
+}
+
+.body{
+
+    background-image: url("../img/imagem.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}

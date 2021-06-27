@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    ListVenda
+{% endblock %}
+
+
+
+{% block main %}
+
+    {% for ven in dados %}
+    Valor Total = {{ ven.valor_total }}
+    {% if ven.id_cliente %}
+        Id_Cliente: {{ ven.id_cliente }}<br>
+        {% else %}
+        Id_Cliente:<br>
+        {% endif %}
+     {% if ven.observacao %}
+            Observação: {{ ven.observacao }}<br>
+        {% else %}
+         Observação: <br>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
