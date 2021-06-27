@@ -1,4 +1,6 @@
-# tchakabum
+# tchakabum 
+An e-commerce of electronic equipment for computers and consoles
+
 ## Project developed in Python + Django during the third semester of the undergraduate course
 
 Augusto Soares da Silva Portella - BP3012441
